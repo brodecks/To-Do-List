@@ -5,17 +5,24 @@ document.getElementById('btnAdd').addEventListener('click', function() {
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
         p.textContent = taskValue;
-        document.querySelector('.list').appendChild(p);
         p.appendChild(checkbox);
+        document.querySelector('.list').appendChild(p);
         document.getElementById('txtTask').focus();
         document.getElementById('txtTask').value = '';
-    }
-});
 
-document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
-    if(checkbox.checked){
-        const pa = document.createElement('p');
-        pa.textContent = 'Bravo ! Vous avez realise toutes vos taches.';
-        document.querySelector('.list').appendChild(pa);
+        // Déclare test en dehors de l'écouteur
+        let test;
+
+        checkbox.addEventListener('change', function() {
+            if (checkbox.checked) {
+                test = document.createElement('p');
+                test.textContent = 'hello';
+                document.querySelector('.list').appendChild(test);
+            } else {
+                if (test) {
+                    test.remove();
+                }
+            }
+        });
     }
 });
