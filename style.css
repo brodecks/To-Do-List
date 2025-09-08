@@ -1,7 +1,5 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -9,11 +7,18 @@ body {
 .list{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    align-items: left;
+    height: 700px;
+    width: 1000px;
+    border-style: solid;
+    padding: 20px;
 }
 .add{
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100px;
+}
+#btnAdd{
+    padding: 10px;
 }
